@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="bg-overlay"></div>
+<img src="../../../assets/college.jpg" alt="college image" class="bg-college"/>
+<div class="wrapper-top">
+    <div class="college-info" *ngIf="college">{{college.Name}}<p style="font-size: 18px;font-weight: 400;">{{college?.City}}</p></div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h4 style="margin-top:20px">Overview</h4>
+            <table class="table table-bordered" *ngIf="college">
+                <tbody>
+                    <tr>
+                        <td><strong>College Name</strong></td>
+                        <td>{{college.Name}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>City</strong></td>
+                        <td>{{college.City}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>State</strong></td>
+                        <td>{{college.State}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year Founded</strong></td>
+                        <td>{{college.Year}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>No of Students</strong></td>
+                        <td>{{college.StudentsCount}}</td>
+                        </tr>
+                    <tr>
+                        <td><strong>Courses offered</strong></td>
+                        <td>
+                            <span class="badge badge-pill badge-info" *ngFor="let course of college?.Courses">{{course}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 style="margin-top:20px">Students</h4>              
+            <table class="table table-hover table-bordered" style="cursor:pointer">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Batch</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let student of students; let i=index" (click)="gotoDetail(student._id)">
+                            <td>{{i+1}}</td>
+                            <td>{{student.Name}}</td>
+                            <td>{{student.YearOfBatch}}</td>
+                        </tr>
+                    </tbody>                  
+                  </table>
+        </div>
+        <div class="col-lg-4">
+            <h4 style="margin-top:20px">Similar Colleges</h4>
+            <div *ngIf="!similarCollegesFound">
+                similar colleges not found
+            </div>
+            <div class="row card-group" *ngIf="similarCollegesFound">
+                <div class="" *ngFor="let college of collegeDetails?.similar_colleges">
+                    <div class="card mb-4 mr-4 ml-4" (click)="gotoCollegeDetails(college._id)" style="cursor:pointer">
+                        <img class="card-img-top" src="../../../assets/college.jpg" alt="College image" style="max-height:150px">
+                        <div class="card-body">
+                            <h6 class="card-title">{{college.Name}}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{college.City}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>

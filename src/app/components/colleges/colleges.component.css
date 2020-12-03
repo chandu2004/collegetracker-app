@@ -1,0 +1,17 @@
+.college-header {
+    margin-top: 20px;
+}
+
+.table {
+    background-color: white;
+}
+
+.card-title {
+    min-height: 37px;
+}
+
+.details {
+    background-color: "#2bbbad";
+    border-color: "#2bbbad";
+    color: white;
+}

@@ -1,0 +1,38 @@
+.bg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 193px;
+    top: 9%;
+    background-image: linear-gradient(to top,rgba(0,0,0,.3),#323c4f);
+}
+
+.bg-college {
+    width: 100%;
+    height: 193px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.wrapper-top {
+    position: absolute;
+    width: 100%;
+    padding: 0 30px;
+    color: white;
+    top: 30%;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.college-info {
+    width: 100%;
+    position: relative;
+    height: 80px;
+}
+
+.table {
+    background-color: white;
+}
+
+.badge {
+    margin-right: 5px;
+}

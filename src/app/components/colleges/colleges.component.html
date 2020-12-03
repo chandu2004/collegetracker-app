@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row college-header">
+        <div class="col-6">
+            <h3>{{college_header}}</h3>
+        </div>
+    </div>
+
+    <div class="row card-group">
+        <div class="col-lg-4 d-flex align-items-stretch"  *ngFor="let college of colleges">
+            <div class="card mb-4">
+                <img class="card-img-top" src="../../../assets/college.jpg" alt="College image">
+                <div class="card-body">
+                    <h6 class="card-title">{{college.Name}}</h6>
+                    <a (click)="gotoDetails(college._id)" class="btn" style="background-color: #2bbbad; border-color: #2bbbad; color: white">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>        
+</div>
